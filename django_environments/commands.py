@@ -1,12 +1,14 @@
+import sys
+
 from .env import Env
 
 
-def new(name):
+def new(name, out=sys.stdout):
     Env(name).create()
-    print 'Environment \'{0}\' was created.'.format(name)
+    out.write('Environment \'{0}\' was created.'.format(name))
 
 
-def list():
-    print 'Created environments:'
+def list(out=sys.stdout):
+    out.write('Created environments:')
     for env in Env.all():
-        print '- {0}'.format(env)
+        out.write('- {0}'.format(env))
