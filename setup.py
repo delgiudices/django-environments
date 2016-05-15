@@ -54,6 +54,9 @@ an incredible python package
     extras_require={
         'tests': tests_require,
     },
+    scripts=[
+        'django_environments/bin/djenv',
+    ],
     entry_points={
         'console_scripts': [
             # add cli scripts here in this form:
