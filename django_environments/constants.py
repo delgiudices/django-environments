@@ -1,6 +1,9 @@
 import sys
 
 ENVS_DIR = 'envs'
+TEMPLATES = (
+    'nginx.conf',
+)
 
 # Test Constants
 

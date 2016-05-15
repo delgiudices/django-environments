@@ -14,19 +14,12 @@ def cli():
 @click.command(help='Create a new environment')
 @click.argument('name')
 def new(name):
-    try:
-        commands.new(name)
-    except Exception as e:
-        print e.message
+    commands.new(name)
 
 
 @click.command(help='List all created environments')
 def list():
-    try:
-        commands.list()
-    except Exception as e:
-        print e.message
-
+    commands.list()
 
 cli.add_command(new)
 cli.add_command(list)

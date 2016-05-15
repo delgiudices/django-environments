@@ -1,6 +1,7 @@
 import os
 
 from . import constants
+from .utils import generate_single_template
 
 
 class Env(object):
@@ -22,6 +23,15 @@ class Env(object):
             os.mkdir(constants.ENVS_DIR)
 
         os.mkdir(self.path)
+        self.generate_templates()
+
+    def generate_templates(self):
+        templates = constants.TEMPLATES
+        for template in templates:
+            rendered_template = generate_single_template(template)
+            file = open(os.path.join(self.path, template), 'w')
+            file.write(rendered_template)
+            file.close()
 
     @property
     def exists(self):
