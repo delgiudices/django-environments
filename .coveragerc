@@ -1,0 +1,22 @@
+# This file is part of django-environments.
+# https://github.com/delgiudices/django-environments
+
+# Licensed under the MIT license:
+# http://www.opensource.org/licenses/MIT-license
+# Copyright (c) 2016, Luis Del Giudice <luis.dg19@gmail.com>
+
+[run]
+omit =
+    *tests.py
+branch = True
+source =
+    django_environments
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    raise NotImplementedError
+    if __name__ == .__main__.:
+    from urllib.parse import parse_qs
+    except ImportError:
