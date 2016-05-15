@@ -15,8 +15,12 @@ no_targets__:
 setup:
 	@pip install -U -e .\[tests\]
 
+# Flake8
+lint:
+	@flake8 django_environments
+
 # test your application (tests in the tests/ directory)
-test: unit
+test: unit lint
 
 unit:
 	@coverage run --branch `which nosetests` -vv -s tests/
